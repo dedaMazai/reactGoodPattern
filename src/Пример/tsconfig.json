@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": false,
+        "strict": false,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "module": "es6",
+        "moduleResolution": "node",
+        "target": "es5",
+        "allowJs": true,
+        "jsx": "react",
+        "plugins": [
+            {
+              "name": "typescript-plugin-css-modules",
+              "options": {
+                "customTemplate": "./utils/ts/tsCssMapTpl.js"
+              }
+            }
+        ]
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

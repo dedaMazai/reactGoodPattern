@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Counter } from '@/entities/Counter';
+
 import cls from './MainPage.module.scss';
 
 interface MainPageProps {
@@ -13,6 +15,7 @@ const MainPage = (props: MainPageProps) => {
     return (
         <div className={classNames(cls.MainPage, {}, [className])}>
             <p>{t('test')}</p>
+            <Counter />
         </div>
     );
 };
