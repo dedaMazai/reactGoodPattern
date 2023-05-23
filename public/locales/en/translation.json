@@ -1,3 +1,7 @@
 {
-    "test": "Test example"
+    "test": "Test example",
+    "Throw Error": "Throw Error",
+    "You have not available this page": "You have not available this page",
+    "The unknown problem": "The unknown problem",
+    "Refresh site": "Refresh site"
 }

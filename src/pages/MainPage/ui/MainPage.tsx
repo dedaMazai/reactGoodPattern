@@ -6,7 +6,7 @@ interface MainPageProps {
     className?: string
 }
 
-export const MainPage = (props: MainPageProps) => {
+const MainPage = (props: MainPageProps) => {
     const { className } = props;
     const { t } = useTranslation();
 
@@ -16,3 +16,5 @@ export const MainPage = (props: MainPageProps) => {
         </div>
     );
 };
+
+export default MainPage;

@@ -1,21 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import { memo, Suspense, useCallback } from 'react';
-import { BrowserView } from 'react-device-detect';
-import { AppRoutersProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
 import { PageLoader } from '@/shared/ui/PageLoader';
 import { RequireAuth } from './RequireAuth';
-import { Sidebar } from '@/widgets/Sidebar';
+import { AppRoutersProps } from '@/shared/types/router';
+import { routeConfig } from '../config/routerConfig';
 
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRoutersProps) => {
         const element = (
             <Suspense fallback={<PageLoader />}>
-                <BrowserView>
-                    {route.withSidebar && <Sidebar />}
-                </BrowserView>
-                <div className="content-page">
-                    {route.element}
-                </div>
+                {route.element}
             </Suspense>
         );
 
@@ -23,7 +17,7 @@ const AppRouter = () => {
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly ? <RequireAuth role={route.role}>{element}</RequireAuth> : element}
+                element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
             />
         );
     }, []);

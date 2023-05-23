@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ThemeButton } from '../../Button/Button';
 import Language from '@/shared/assets/icons/Language.svg';
-import { Icon } from '../../Icon/Icon';
+import { Icon } from '@/shared/ui/Icon/Icon';
+
 import cls from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
@@ -17,14 +17,11 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     };
 
     return (
-        <Button
+        <button
             onClick={toggle}
-            noShirk
-            noPadding
-            theme={ThemeButton.BACKGROUND}
             className={classNames(cls.LangSwitcher, {}, [className])}
         >
             <Icon Svg={Language} className={cls.img} inverted />
-        </Button>
+        </button>
     );
 };

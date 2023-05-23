@@ -1,4 +1,3 @@
-// что бы понимал import classes
 declare module '*.scss' {
   interface IClassNames {
     [className: string]: string

@@ -2,6 +2,7 @@ export {
     getUserInited,
     getUserAuthData,
     getFingerKey,
+    getUserRoles,
 } from './modal/selectors/getUserData';
 
 export {

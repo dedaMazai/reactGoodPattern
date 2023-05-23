@@ -1,16 +1,5 @@
 @import "reset";
 @import "variables/global";
-@import "themes/light";
-
-@font-face {
-    font-family: Furore;
-    src: url("./fonts/Furore.otf");
-    src:
-        url("./fonts/Furore.ttf") format("truetype"),
-        url("./fonts/Furore.otf");
-    font-style: normal;
-    font-weight: 400;
-}
 
 .body {
     font: var(--font-m);
@@ -28,22 +17,10 @@
     min-height: 100vh;
 }
 
-.all-content-page {
+.content-page {
     display: flex;
     overflow: hidden;
     height: calc(100vh - var(--navbar-height));
-}
-
-.content-page {
-    display: flex;
-    overflow: auto;
-    width: 100%;
-    padding: 0 2rem;
-    height: calc(100vh - var(--navbar-height));
-
-    @media screen and (max-width: 700px) {
-        padding: 0 1rem;
-    }
 }
 
 *::-webkit-scrollbar {

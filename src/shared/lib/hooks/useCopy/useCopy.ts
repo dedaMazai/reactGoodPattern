@@ -1,6 +1,4 @@
 import React from 'react';
-import toast from 'react-hot-toast';
-import { useTranslation } from 'react-i18next';
 
 type CopiedValue = string | null;
 type CopyFn = (text: string) => Promise<boolean>;
@@ -8,7 +6,6 @@ type CopyFn = (text: string) => Promise<boolean>;
 export const useCopyToClipboard = (): [CopiedValue, CopyFn, boolean] => {
     const [copiedText, setCopiedText] = React.useState<CopiedValue>(null);
     const [isSuccess, setIsSuccess] = React.useState(false);
-    const { t } = useTranslation();
 
     React.useEffect(() => {
         if (isSuccess) {
@@ -28,7 +25,6 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn, boolean] => {
             await navigator.clipboard.writeText(text);
             setCopiedText(text);
             setIsSuccess(true);
-            toast.success(t('Copied!'));
             return true;
         } catch (error) {
             console.warn('Copy failed', error);
@@ -36,7 +32,7 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn, boolean] => {
             setIsSuccess(false);
             return false;
         }
-    }, [t]);
+    }, []);
 
     return [copiedText, copy, isSuccess];
 };

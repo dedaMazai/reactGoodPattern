@@ -5,7 +5,7 @@ export interface User {
     refresh_token?: string;
     access_token?: string;
     otp?: string;
-    role?: UserRole[];
+    roles?: UserRole[];
 }
 
 export interface UserSchema {

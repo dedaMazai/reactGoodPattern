@@ -1,5 +1,3 @@
-import { NotFoundPage } from './ui/NotFoundPage';
-
 export {
-    NotFoundPage,
-};
+    NotFoundPageAsync as NotFoundPage,
+} from './ui/NotFoundPage.async';
