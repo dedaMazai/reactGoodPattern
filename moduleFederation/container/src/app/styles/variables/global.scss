@@ -1,0 +1,72 @@
+:root {
+    --font-family-main: consolas, "Times New Roman", serif;
+
+    // xss
+    --font-size-xss: 8px;
+    --font-line-xss: 16px;
+    --font-xss: var(--font-size-xss) / var(--font-line-xss) var(--font-family-main);
+
+    // xs
+    --font-size-xs: 12px;
+    --font-line-xs: 20px;
+    --font-xs: var(--font-size-xs) / var(--font-line-xs) var(--font-family-main);
+
+    // s
+    --font-size-s: 14px;
+    --font-line-s: 22px;
+    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
+    // m
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+
+    // l
+    --font-size-l: 20px;
+    --font-line-l: 28px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+    // xl
+    --font-size-xl: 24px;
+    --font-line-xl: 32px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
+    // xxl
+    --font-size-xxl: 32px;
+    --font-line-xxl: 40px;
+    --font-xxl: var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main);
+
+    // Размеры
+    --navbar-height: 65px;
+    --sidebar-width: 200px;
+    --sidebar-width-collapsed: 60px;
+
+    // Индексы
+    --modal-z-index: 1000;
+    --overlay-z-index: 100;
+
+    // Цвета
+    --overlay-color: rgba(0, 0, 0, 60%);
+    --bg-color: #0d0324;
+    --inverted-bg-color: #241e6d;
+    --primary-color: #fefefc;
+    --secondary-color: #546bf2;
+    --secondary-color-active: #344cd3;
+    --grey100: #cfcdd3;
+    --grey200: #898a9e;
+    --grey300: #3f3f3f;
+    --green: #30b731;
+    --red: #dd5471;
+    --red-light: #dd547299;
+    --red-dark: #c93838;
+    --dark: #d0cdff30;
+    --orange: #f37032;
+    --orange-light: #ff8851;
+    --purple-color: #bbc4fa80;
+    --table-bg-color: #150c3c;
+    --table-light: #2e2d88;
+
+    // skeleton
+    --skeleton-shadow: #2b2be8;
+    --skeleton-color: #342b99;
+}
