@@ -23,8 +23,7 @@ export function createReduxStore(
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-            .concat(rtqApi.middleware),
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(rtqApi.middleware),
     });
 
     // @ts-ignore
