@@ -1,7 +1,10 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const ESLintPlugin = require("eslint-webpack-plugin");
 import webpack from 'webpack';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+const FileManagerPlugin = require("filemanager-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
@@ -19,6 +22,7 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
+		new ESLintPlugin(),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
@@ -43,6 +47,55 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
                 mode: 'write-references',
             },
         }),
+		// new FileManagerPlugin({
+		// 	events: {
+		// 		onStart: {
+		// 			delete: [distName],
+		// 		},
+		// 		onEnd: {
+		// 			copy: [
+		// 				{
+		// 					source: path.join(__dirname, "public"),
+		// 					destination: distName,
+		// 				},
+		// 			],
+		// 		},
+		// 	},
+		// }),
+		// new ModuleFederationPlugin({
+		// 	name: "Host",
+		// 	//library: { type: 'var', name: 'Host' },
+		// 	remotes: {
+		// 		Aodb: `Aodb@http://localhost:3011/moduleEntry.js?v=...`, // ENV...
+		// 	},
+		// 	shared: {
+		// 		...dependencies,
+		// 		react: { eager: true, singleton: true, requiredVersion: dependencies["react"] },
+		// 		"react-dom": { eager: true, singleton: true, requiredVersion: dependencies["react-dom"] },
+		// 		"react-router-dom": { eager: true, singleton: true, requiredVersion: dependencies["react-router-dom"] },
+		// 		history: { eager: true, singleton: true, requiredVersion: dependencies["history"] },
+		// 		axios: { eager: true, singleton: true, requiredVersion: dependencies["axios"] },
+		// 		antd: { eager: true, singleton: true, requiredVersion: dependencies["antd"] },
+		// 		echarts: { eager: true, singleton: true, requiredVersion: dependencies["echarts"] },
+		// 	},
+		// }),
+        // optimization: {
+        //   minimizer: [
+        //     new ImageMinimizerPlugin({
+        //       minimizer: {
+        //         implementation: ImageMinimizerPlugin.imageminMinify,
+        //         options: {
+        //           plugins: [
+        //             ['gifsicle', {interlaced: true}],
+        //             ['jpegtran', {progressive: true}],
+        //             ['optipng',  {optimizationLevel: 5}],
+        //             ['svgo',     {name: 'preset-default'}],
+        //           ]
+        //         }
+        //       }
+        //     })
+        //   ]
+        // }
     ];
 
     if (isDev) {
