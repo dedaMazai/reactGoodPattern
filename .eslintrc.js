@@ -8,6 +8,14 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'eslint:recommended',
+        'plugin:react/jsx-runtime',
+        'plugin:react-hooks/recommended',
+        'plugin:import/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'airbnb/hooks',
+        'plugin:prettier/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -22,15 +30,22 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'prettier',
     ],
     rules: {
+        quotes: ['error', 'double'],
+        'arrow-body-style': [0, 'as-needed'],
+        'linebreak-style': ['error', 'windows'],
         'react/jsx-indent': [2, 4],
-        'react/no-array-index-key': 'off',
         'react/jsx-indent-props': [2, 4],
+        'react/no-array-index-key': 'off',
         indent: [2, 4],
-        'react/jsx-filename-extension': [2, {
-            extensions: ['.js', '.jsx', '.tsx'],
-        }],
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.js', '.jsx', '.tsx'],
+            },
+        ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -38,7 +53,13 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'jsx-a11y/no-autofocus': 'off',
         'react/jsx-props-no-spreading': 'warn',
-        'react/function-component-definition': 'off',
+        'react/function-component-definition': [
+            'error',
+            {
+                namedComponents: ['function-declaration', 'arrow-function'],
+                unnamedComponents: 'arrow-function',
+            },
+        ],
         'no-shadow': 'off',
         'import/extensions': 'off',
         'jsx-a11y/label-has-associated-control': 'off',
@@ -46,21 +67,26 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'react/button-has-type': 'off',
         'no-return-await': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            ignoreAttribute: [
-                'as',
-                'role',
-                'data-testid',
-                'to', 'target',
-                'justify',
-                'align',
-                'direction',
-                'gap',
-            ],
-        }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: [
+                    'as',
+                    'role',
+                    'data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'align',
+                    'direction',
+                    'gap',
+                ],
+            },
+        ],
         'max-len': [
-            'error', {
+            'error',
+            {
                 ignoreComments: true,
                 ignoreStrings: true,
                 code: 120,

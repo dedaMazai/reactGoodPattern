@@ -15,7 +15,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const tsxCadeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
     const fileLoader = {
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        test: /\.(png|jpe?g|gif|woff2?|eot|ttf|otf)$/i,
         use: [
             {
                 loader: 'file-loader',
