@@ -1,0 +1,16 @@
+.body {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
+.appDigitalTwin {
+    font: var(--font-m);
+    color: var(--primary-color);
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+.digitalTwin-page {
+    display: flex;
+    overflow: hidden;
+}
