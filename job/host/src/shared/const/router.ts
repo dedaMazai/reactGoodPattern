@@ -2,8 +2,8 @@ import { AppRouters } from "../types/routerTypes";
 
 const RoutePath: Record<AppRouters, () => string> = {
     [AppRouters.MAIN]: () => '/',
-    [AppRouters.FORBIDDEN]: () => '/forbidden',
-    [AppRouters.DIGITAL_TWIN]: () => '/digital_twin',
+    [AppRouters.FORBIDDEN]: () => '/forbidden/*',
+    [AppRouters.DIGITAL_TWIN]: () => '/digital_twin/*',
     // last
     [AppRouters.NOT_FOUND]: () => '*',
 };

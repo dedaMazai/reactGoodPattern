@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Counter } from "@/entities/Counter";
+import { LangSwitcher } from "@/features/LangSwitcher";
 
 import cls from "./MainPage.module.scss";
-import { LangSwitcher } from "@/features/LangSwitcher";
 
 
 interface MainPageProps {
@@ -18,7 +18,7 @@ const MainPage = (props: MainPageProps) => {
         <div className={classNames(cls.text, {}, [className])}>
             <p className={cls.text}>{t("testHandsontable")}</p>
             <LangSwitcher />
-            {/* <Counter /> */}
+            <Counter />
         </div>
     );
 };

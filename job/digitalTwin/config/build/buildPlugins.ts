@@ -45,7 +45,7 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
 		  name: "digitalTwin",
 		  filename: "remoteEntry.js",
 		  exposes: {
-			"./DigitalTwin": "./src/pages/MainPage/ui/MainPage",
+			"./DigitalTwin": "./src/app/App",
 		  },
 		  shared: {
 			...dependencies,

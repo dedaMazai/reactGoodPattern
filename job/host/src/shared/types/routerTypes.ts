@@ -10,6 +10,5 @@ export enum AppRouters {
     MAIN = "main",
     FORBIDDEN = "forbidden",
     DIGITAL_TWIN = "digital_twin",
-    // last
     NOT_FOUND = "not_found"
 }
