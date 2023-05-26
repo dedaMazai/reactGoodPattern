@@ -21,6 +21,7 @@ export const routeConfig: Record<AppRouters, AppRoutersProps> = {
     [AppRouters.DIGITAL_TWIN]: {
         path: RoutePath.digital_twin(),
         element: <DigitalTwin />,
+        // authOnly: true,
     },
     [AppRouters.NOT_FOUND]: {
         path: RoutePath.not_found(),
